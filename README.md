@@ -1,14 +1,18 @@
-# Template
+# ActiveMQ Artemis Test App
 
-A repository template for creating new projects.
+A Java app that makes TCP requests to an ActiveMQ Artemis for testing purposes.
 
 ## Installation
 
-This is a template repository and cannot be installed.
+Install with Maven.
+
+```
+mvn clean install
+```
 
 ## Usage
 
-Select this repository as a template when creating a new GitHub repository.
+Run the main class with args.
 
 ## Contributing
 

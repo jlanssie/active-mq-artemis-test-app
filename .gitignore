@@ -33,6 +33,8 @@ bin/
 # 3. JAVA & JVM (Maven, Gradle, etc.)
 # ==========================================
 # Compiled output
+!**/src/main/**/target/
+!**/src/test/**/target/
 *.class
 target/
 build/
