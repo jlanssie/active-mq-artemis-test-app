@@ -4,15 +4,16 @@ A Java app that makes TCP requests to an ActiveMQ Artemis for testing purposes.
 
 ## Installation
 
-Install with Maven.
+Install with Maven using the provided settings.xml
 
 ```
-mvn clean install
+mvn clean install -s settings.xml -T 1C
 ```
 
 ## Usage
 
-Run the main class with args.
+Run the Producer class to produce a message to an ActiveMQ queue.
+Or run the Subscriber class to receive messages from an ActiveMQ  queue.
 
 ## Contributing
 
