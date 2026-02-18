@@ -20,6 +20,8 @@ mvn clean install -s settings.xml -T 1C -Psubscriber && mvn clean install -s set
 Run the Producer class to produce a message to an ActiveMQ queue.
 Or run the Subscriber class to receive messages from an ActiveMQ queue.
 
+Optionally, add an `application-local.yml` with configurations for your local app.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss the proposed changes.

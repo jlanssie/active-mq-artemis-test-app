@@ -44,10 +44,21 @@
                 <start-class>com.jeremylanssiers.activemq.message.producer.Producer</start-class>
             </properties>
         </profile>
+
         <profile>
             <id>subscriber</id>
             <properties>
                 <start-class>com.jeremylanssiers.activemq.message.subscriber.Subscriber</start-class>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
             </properties>
         </profile>
     </profiles>
