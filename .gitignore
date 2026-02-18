@@ -83,17 +83,13 @@ yarn-debug.log*
 yarn-error.log*
 
 # Spring Boot
-.application-local.yml
-.application-dev.yml
-.application-acc.yml
-.application-prod.yml
-.application-local.yaml
-.application-dev.yaml
-.application-acc.yaml
-.application-prod.yaml
+application-*.yml
+application-*.yaml
 
-!.application.yml
-!.application.yaml
+!application.yml
+!application.yaml
+!application-sample.yml
+!application-sample.yaml
 
 # ==========================================
 # 5. SECURITY & ENVIRONMENT

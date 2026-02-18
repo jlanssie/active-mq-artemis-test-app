@@ -1,0 +1,6 @@
+app:
+  jms:
+    destination-name: consumerReceiver
+    routing-type: ANYCAST
+    producer-name: producer
+    reply-name: consumerBroadcaster
