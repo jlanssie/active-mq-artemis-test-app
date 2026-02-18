@@ -1,6 +1,7 @@
 package com.jeremylanssiers.activemq.message.producer;
 
 import jakarta.jms.TextMessage;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,24 +9,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jms.core.JmsTemplate;
 
 import java.util.UUID;
-import java.util.logging.Logger;
 
+@Slf4j
 @SpringBootApplication
 public class Producer implements CommandLineRunner {
-    private static final Logger logger = Logger.getLogger(Producer.class.getName());
-
     private final JmsTemplate jmsTemplate;
 
-    @Value("${app.jms.destination-name:consumer}")
+    @Value("${app.jms.routing-context.address:messageAddress}")
     private String destinationName;
 
-    @Value("${app.jms.routing-type:ANYCAST}")
+    @Value("${app.jms.routing-context.routing-type:ANYCAST}")
     private String routingType;
 
-    @Value("${app.jms.producer-name:producer}")
+    @Value("${app.jms.message-producer:messageProducer}")
     private String producerName;
 
-    @Value("${app.jms.reply-name:consumerBroadcaster}")
+    @Value("${app.jms.message-reply-user:messageReplyUser}")
     private String replyUser;
 
     public Producer(JmsTemplate jmsTemplate) {
@@ -53,6 +52,6 @@ public class Producer implements CommandLineRunner {
             return message;
         });
 
-        logger.info("Sent message to " + destinationName + " as " + routingType);
+        log.info("Sent message to {} as {}", destinationName, routingType);
     }
 }

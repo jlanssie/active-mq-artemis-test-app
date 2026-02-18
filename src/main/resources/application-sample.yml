@@ -1,6 +1,7 @@
 app:
   jms:
-    destination-name: consumerReceiver
-    routing-type: ANYCAST
-    producer-name: producer
-    reply-name: consumerBroadcaster
+    routing-context:
+      address: messageAddress
+      routing-type: ANYCAST
+    message-producer: messageProducer
+    message-reply-user: messageReplyUser
